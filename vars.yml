@@ -1,0 +1,16 @@
+- name: Demo on Vars
+  hosts: all
+  vars_file:
+    - example-vars.yml
+  vars:
+    URL: play.example.com
+    PROJECT: exammple
+  tasks:
+    - name: Print URL
+      debug:
+        msg: URL = {{ URL }}
+    - name: Print URL from Task
+      debug:
+        msg: URL = {{ URL }}
+      vars:
+        URL: task.example.com
