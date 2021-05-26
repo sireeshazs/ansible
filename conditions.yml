@@ -4,4 +4,4 @@
     - name: Print Ubuntu
       debug:
         msg: Hello Ubuntu
-      when: OS == "Ubuntu"
+      when: OS == Ubuntu
