@@ -1,14 +1,14 @@
-- name: demo on tags
+- name: Demo on Tags
   hosts: all
   tasks:
-     - name: print CentOS
-       debug:
-       msg: hello CentOS
-       tags:
-       - CentOS
+    - name: Print CentOS
+      debug:
+        msg: Hello CentOS
+      tags:
+        - CentOS
 
-       - name: print ubuntu
-       debug:
-       msg: hello ubuntu
-       tags:
-       - ubuntu
+    - name: Print Ubuntu
+      debug:
+        msg: Hello Ubuntu
+      tags:
+        - Ubuntu
