@@ -1,6 +1,6 @@
 - name: Demo on Vars
   hosts: all
-  var_files:
+  var_file:
     - example-var.yml
   var:
     URL: play.example.com
