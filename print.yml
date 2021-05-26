@@ -1,0 +1,6 @@
+- name: Demo on print a mesg
+  hosts: all
+  tasks:
+      - name: print sireesha
+        debug:
+         msg: Hello my frnds @#@
