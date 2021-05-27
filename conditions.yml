@@ -4,10 +4,9 @@
     - name: Print CentOS
       debug:
         msg: Hello CentOS
-        when: OS == " CentOS "
+      when: OS == "CentOS"
 
-      tasks:
-       - name: print Ubuntu
-         debug:
-          msg: Hello Ubuntu
-          when: OS == " Ubuntu "
+    - name: Print Ubuntu
+      debug:
+        msg: Hello Ubuntu
+      when: OS == "Ubuntu"
