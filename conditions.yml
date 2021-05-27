@@ -1,7 +1,11 @@
 - name: Demo on Conditions
   hosts: all
   tasks:
-    - name: Print Ubuntu
+    - name: Print CentOS
       debug:
-        msg: Hello Ubuntu
-      when: OS == Ubuntu
+        msg: Hello CentOS
+      
+      tasks:
+       - name: print ubuntu
+         debug:
+          msg: Hello ubuntu
