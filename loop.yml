@@ -3,13 +3,8 @@
   tasks:
     - name: Print fruitnames
       debug:
-        msg: "Fruit = {{ item.name }}"
+        msg: "Fruit = {{ item }}"
       loop:
-        - name: banana
-          color: yellow
-        -name: apple
-         color: red
-        -name: orange
-        color: oran
-      loop_control:
-        label: "{{ item.name }}"  
+        orange
+        apple
+        redmilk
