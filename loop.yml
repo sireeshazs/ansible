@@ -5,6 +5,6 @@
       debug:
         msg: "Fruit = {{ item }}"
       loop:
-        orange
-        apple
-        redmilk
+       - orange
+        - apple
+        - redmilk
