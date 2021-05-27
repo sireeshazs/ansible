@@ -18,3 +18,13 @@
         - pear
       loop_control:
         loop_var: myvar
+
+    - name: Count our fruit
+      debug:
+        msg: "{{ item }} with index {{ my_idx }}"
+      loop:
+        - apple
+        - banana
+        - pear
+      loop_control:
+        index_var: my_idx
