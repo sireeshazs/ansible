@@ -1,6 +1,7 @@
 - name: Setup todo project
   hosts: all
   become: yes
+  become_user: root
   
   roles:
     - role: redis
