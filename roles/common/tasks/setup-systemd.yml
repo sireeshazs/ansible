@@ -2,6 +2,10 @@
   template:
     src: "login.service"
     dest: /etc/systemd/system/login.service
+    remote_src: yes
+    owner: ubuntu
+    group: ubuntu
+    
 
 - name: Start login Service
   systemd:
