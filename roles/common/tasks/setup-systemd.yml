@@ -1,11 +1,11 @@
-- name: Copy {{COMPONENT}} Service file
+- name: Copy systemd Service file
   template:
-    src: "{{COMPONENT}}.service"
-    dest: /etc/systemd/system/{{COMPONENT}}.service
+    src: "login.service"
+    dest: /etc/systemd/system/login.service
 
-- name: Start {{COMPONENT}} Service
+- name: Start login Service
   systemd:
-    name: "{{COMPONENT}}"
+    name: "login"
     daemon_reload: yes
     state: started
     enabled: yes
