@@ -21,6 +21,6 @@
   unarchive:
     src: /tmp/{{COMPONENT}}.zip
     dest: /home/ubuntu/{{COMPONENT}}
-    remote_src: yes
+    remote_src: no
     owner: ubuntu
     group: ubuntu
