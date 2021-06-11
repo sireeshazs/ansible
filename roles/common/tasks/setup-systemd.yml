@@ -1,6 +1,6 @@
 - name: Copy systemd Service file
   template:
-    src: "login.service"/templates
+    src: "login.service".yml
     dest: /etc/systemd/system/login.service
     remote_src: yes
     owner: ubuntu
