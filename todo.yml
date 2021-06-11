@@ -7,5 +7,10 @@
       tags: redis
       when: COMPONENT == "redis"
 
+
+    - role: users
+      tags: users
+      when: COMPONENT == "users"
+
     
      
