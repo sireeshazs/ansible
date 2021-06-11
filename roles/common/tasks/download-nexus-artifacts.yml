@@ -12,10 +12,10 @@
 
 - name: Create the artifact path
   file:
-    path: /home/todo/{{COMPONENT}}
+    path: /home/ubuntu/{{COMPONENT}}
     state: directory
-    owner: todo
-    group: todo
+    owner: ubuntu
+    group: ubuntu
 
 - name: Extract the {{COMPONENT}} Content
   unarchive:
