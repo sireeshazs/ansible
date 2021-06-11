@@ -1,4 +1,0 @@
-- name: Import Maven common role
-  include_role:
-      name: common
-      tasks_from: maven
