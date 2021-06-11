@@ -7,7 +7,7 @@
 
 - name: Clean the old artifacts
   file:
-    path: /home/todo/{{COMPONENT}}
+    path: /home/ubuntu/{{COMPONENT}}
     state: absent
 
 - name: Create the artifact path
@@ -20,7 +20,7 @@
 - name: Extract the {{COMPONENT}} Content
   unarchive:
     src: /tmp/{{COMPONENT}}.zip
-    dest: /home/todo/{{COMPONENT}}
+    dest: /home/ubuntu/{{COMPONENT}}
     remote_src: yes
-    owner: todo
-    group: todo
+    owner: ubuntu
+    group: ubuntu
