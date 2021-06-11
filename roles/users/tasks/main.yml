@@ -1,4 +1,4 @@
-- name: Import Maven Common role
+- name: Import java Common role
   include_role:
     name: common
-    tasks_from: maven
+    tasks_from: java
