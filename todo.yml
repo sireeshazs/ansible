@@ -16,5 +16,9 @@
     - role: login
       tags: login
       when: COMPONENT == "login"
+
+    - role: todo
+      tags: todo
+      when: COMPONENT == "todo"
     
      
