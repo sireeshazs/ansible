@@ -1,3 +1,9 @@
+- name: Install java
+  apt:
+    name: openjdk-8-jdk
+    state: present
+    update_cache: yes
+
 - name: Install Maven
   apt:
     name: maven
