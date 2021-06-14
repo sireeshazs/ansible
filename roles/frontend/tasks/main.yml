@@ -3,12 +3,6 @@ name: Install Nginx
     name: nginx
     update_cache: yes
     state: present
-
-- name: start nginx
-  systemd:
-    state: started
-    name: nginx
-    enabled: yes
            
 - name: Download Frontend from Nexus
   get_url:
