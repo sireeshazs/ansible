@@ -27,13 +27,13 @@ name: Install Nginx
   replace:
     path: /root/config/index.js
     regexp: '127.0.0.1'
-    replace: 'login.swathi.host'
+    replace: 'login.sireeshazs.host'
 
 - name: Replace content
   replace:
     path: /root/config/index.js
     regexp: '127.0.0.2'
-    replace: 'todo.swathi.host'
+    replace: 'todo.sireeshazs.host'
 
 - name: To start npm
   shell: npm start
