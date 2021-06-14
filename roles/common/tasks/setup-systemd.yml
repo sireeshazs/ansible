@@ -2,7 +2,10 @@
   template:
     src: "{{COMPONENT}}.service"
     dest: /etc/systemd/system/{{COMPONENT}}.service
-
+    remote_src: yes
+    owner: ubuntu
+    group: ubuntu
+    
 - name: Start {{COMPONENT}} Service
   systemd:
     name: "{{COMPONENT}}"
