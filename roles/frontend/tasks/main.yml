@@ -9,6 +9,7 @@
     name: npm
     state: present
     update_cache: yes
+    become: yes
 
 - name: Download Frontend from Nexus
   get_url:
