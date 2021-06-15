@@ -32,16 +32,15 @@
 
 - name: Replace content
   replace:
-    path: /frontend/config/index.js
+    path: frontend/config/index.js
     regexp: '127.0.0.1'
-    replace: 'login.siri.tk'
+    replace: 'login.sirizs.tk'
 
 - name: Replace content
   replace:
-    path: /frontend/config/index.js
+    path: frontend/config/index.js
     regexp: '127.0.0.2'
     replace: 'todo.sirizs.tk'
-
 
 - name: Replace content
   replace:
