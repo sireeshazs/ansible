@@ -32,6 +32,19 @@
 
 - name: Replace content
   replace:
+    path: /frontend/config/index.js
+    regexp: '127.0.0.1'
+    replace: 'login.siri.tk'
+
+- name: Replace content
+  replace:
+    path: /frontend/config/index.js
+    regexp: '127.0.0.2'
+    replace: 'todo.sirizs.tk'
+
+
+- name: Replace content
+  replace:
     path: /etc/nginx/sites-available/default
     regexp: '/var/www/html'
     replace: '/var/www/html/frontend/dist'    
@@ -42,18 +55,6 @@
      state: restarted
      name: nginx
      enabled: yes
-
-- name: Replace content
-  replace:
-    path: /frontend/config/index.js
-    regexp: '127.0.0.1'
-    replace: 'login.siri.tk'
-
-- name: Replace content
-  replace:
-    path: /frontend/config/index.js
-    regexp: '127.0.0.2'
-    replace: 'todo.sirizs.tk'
 
 - name: To start npm
   shell: npm start
