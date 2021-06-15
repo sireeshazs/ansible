@@ -4,6 +4,12 @@
     update_cache: yes
     state: present
 
+- name: Install NPM
+  apt:
+    name: npm
+    state: present
+    update_cache: yes
+
 - name: Download Frontend from Nexus
   get_url:
     url: http://172.31.13.200:8081/repository/frontend/frontend-{{APP_VERSION}}.zip
