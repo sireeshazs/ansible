@@ -16,12 +16,13 @@
     name: nginx
     enabled: yes
            
-- name: Download frontend from nexus
+- name: Download Frontend from Nexus
   get_url:
-    url: http://172.31.13.200:8081/repository/frontend/frontend-0.0.1.zip
+    url: http://172.31.13.200:8081/repository/frontend/frontend-{{APP_VERSION}}.zip
     dest: /tmp/frontend.zip
     username: admin
-    password: admin 
+    password: admin
+
 
 - name: Unzip the download content
   unarchive:
