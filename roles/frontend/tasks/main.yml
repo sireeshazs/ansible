@@ -1,41 +1,21 @@
-name: Install Nginx
+- name: Install Nginx
   apt:
     name: nginx
     update_cache: yes
     state: present
 
-- name: Unzip the download content
-  unarchive:
-    src: /root/frontend
-    dest: /root/
-    remote_src: yes
+- name: Download Frontend from Nexus
+  get_url:
+    url: http://172.31.13.200:8081/repository/frontend/frontend-{{APP_VERSION}}.zip
+    dest: /tmp/frontend.zip
+    username: admin
+    password: admin
 
-- name: Replace content
-  replace:
-    path: /etc/nginx/sites-available/default
-    regexp: '/var/www/html'
-    replace: '/root/frontend/dist'    
-
-- name: start nginx
-  systemd:
-     name: nginx
-     state: restarted
-     name: nginx
-     enabled: yes
-
-- name: Replace content
-  replace:
-    path: /root/config/index.js
-    regexp: '127.0.0.1'
-    replace: 'login.sireeshazs.host'
-
-- name: Replace content
-  replace:
-    path: /root/config/index.js
-    regexp: '127.0.0.2'
-    replace: 'todo.sireeshazs.host'
-
-- name: To start npm
-  shell: npm start
-  args:
-    chdir: /root/
+- name: Delete the default content
+  file:
+    path: "{{ item }}"
+    state: absent
+  loop:
+    - /etc/nginx/sites-enabled/default
+    - /etc/nginx/sites-available/default
+    - /var/www/html
