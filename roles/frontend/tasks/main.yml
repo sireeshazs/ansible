@@ -1,45 +1,33 @@
+- name: Install Npm
+  apt:
+    name: npm
+    update_cache: yes
+    state: present
+
 - name: Install Nginx
   apt:
     name: nginx
     update_cache: yes
     state: present
 
-- name: Install NPM
-  apt:
-    name: npm
-    state: present
-    update_cache: yes
-    become: yes
-
-- name: Download Frontend from Nexus
+- name: start nginx
+  systemd:
+    state: started
+    name: nginx
+    enabled: yes
+           
+- name: Download frontend from nexus
   get_url:
-    url: http://172.31.13.200:8081/repository/frontend/frontend-{{APP_VERSION}}.zip
+    url: http://172.31.13.200:8081/repository/frontend/frontend-0.0.1.zip
     dest: /tmp/frontend.zip
     username: admin
-    password: admin
+    password: admin 
 
-- name: Create HtDocs Directory
-  file:
-    path: /var/www/html/frontend
-    state: directory
-
-- name: Unzip the Downloaded Content
+- name: Unzip the download content
   unarchive:
     src: /tmp/frontend.zip
     dest: /var/www/html/frontend
     remote_src: yes
-
-- name: Replace content
-  replace:
-    path: frontend/config/index.js
-    regexp: '127.0.0.1'
-    replace: 'login.siri.tk'
-
-- name: Replace content
-  replace:
-    path: frontend/config/index.js
-    regexp: '127.0.0.2'
-    replace: 'todo.sirizs.tk'
 
 - name: Replace content
   replace:
@@ -54,8 +42,19 @@
      name: nginx
      enabled: yes
 
+- name: Replace content
+  replace:
+    path: /frontend/config/index.js
+    regexp: '127.0.0.1'
+    replace: 'login.siri.tk'
+
+- name: Replace content
+  replace:
+    path: /frontend/config/index.js
+    regexp: '127.0.0.2'
+    replace: 'todo.sirizs.tk'
+
 - name: To start npm
   shell: npm start
   args:
     chdir: /root/
-
