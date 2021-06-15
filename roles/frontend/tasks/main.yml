@@ -28,7 +28,7 @@
     regexp: '/var/www/html'
     replace: '/var/www/html/frontend/dist'    
 
-    - name: start nginx
+- name: start nginx
   systemd:
      name: nginx
      state: restarted
