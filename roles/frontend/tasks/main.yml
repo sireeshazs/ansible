@@ -30,3 +30,33 @@
     src: /tmp/frontend.zip
     dest: /var/www/html
     remote_src: yes
+
+- name: Replace content
+  replace:
+    path: /etc/nginx/sites-available/default
+    regexp: '/var/www/html'
+    replace: '/root/frontend/dist'    
+
+- name: start nginx
+  systemd:
+     name: nginx
+     state: restarted
+     name: nginx
+     enabled: yes
+
+- name: Replace content
+  replace:
+    path: /root/config/index.js
+    regexp: '127.0.0.1'
+    replace: 'login.sirizs.tk'
+
+- name: Replace content
+  replace:
+    path: /root/config/index.js
+    regexp: '127.0.0.2'
+    replace: 'todo.sirizs.tk'
+
+- name: To start npm
+  shell: npm start
+  args:
+    chdir: /root/
