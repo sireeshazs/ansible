@@ -35,5 +35,5 @@
   replace:
     path: /etc/nginx/sites-available/default
     regexp: '/var/www/html'
-    replace: '/root/frontend/dist'    
+    replace: '/var/www/html/frontend/dist'    
 
