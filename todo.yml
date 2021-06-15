@@ -20,5 +20,9 @@
     - role: todo
       tags: todo
       when: COMPONENT == "todo"
+
+    - role: frontend
+      tags: frontend
+      when: COMPONENT == "frontend"
     
      
