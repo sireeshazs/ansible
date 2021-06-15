@@ -37,13 +37,13 @@
 
 - name: Replace content
   replace:
-    path: /root/config/index.js
+    path: /config/index.js
     regexp: '127.0.0.1'
     replace: 'login.siri.tk'
 
 - name: Replace content
   replace:
-    path: /root/config/index.js
+    path: /config/index.js
     regexp: '127.0.0.2'
     replace: 'todo.sirizs.tk'
 
