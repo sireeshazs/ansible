@@ -18,11 +18,10 @@
   loop:
     - /etc/nginx/sites-enabled/default
     - /etc/nginx/sites-available/default
-    - /var/www/html
 
 - name: Create HtDocs Directory
   file:
-    path: /var/www/html
+    path: /var/www/html/frontend
     state: directory
 
 - name: Unzip the Downloaded Content
