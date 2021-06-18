@@ -35,7 +35,6 @@
   template:
     src: todo.conf
     dest: /etc/nginx/sites-enabled/todo.conf
-  notify: Restart Nginx
 
 - name: Update Nginx Main Config
   template:
