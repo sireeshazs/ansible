@@ -2,7 +2,6 @@
 Description=Todo Service
 
 [Service]
-
 Environment=REDIS_HOST=sirizs.tk
 ExecStart=/bin/node /home/ubuntu/todo/server.js
 SyslogIdentifier =todo
