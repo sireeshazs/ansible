@@ -30,7 +30,7 @@ Instance_Create() {
 }
 
 if [ "$1" == "all" ]; then
-  for instance in sfrontend sredis susers slogin stodo ; do
+  for instance in frontend redis users login todo ; do
     Instance_Create $instance-dev
   done
 else
