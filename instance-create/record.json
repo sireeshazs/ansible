@@ -3,7 +3,7 @@
     "Changes": [{
       "Action": "UPSERT",
       "ResourceRecordSet": {
-        "Name": "COMPONENT.sirizs.tk",
+        "Name": "COMPONENT.sirizs01.ml",
         "Type": "A",
         "TTL": 300,
         "ResourceRecords": [{ "Value": "IPADDRESS"}]
